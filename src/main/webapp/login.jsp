@@ -1,4 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core" %>
+<jsp:useBean id="loginBean" class="ua.bychkovskyy.beans.LoginBean" scope="application"/>
+
+<fmt:setLocale value="${loginBean.language}"/>
+<fmt:bundle basename="label">
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +15,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Signin Template for Bootstrap</title>
+    <title><fmt:message key="page.login.title"/> </title>
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="css/signin.css" rel="stylesheet">
 
@@ -24,16 +31,17 @@
 <div class="container">
 
     <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="form-control" placeholder="Login" autofocus>
-        <input type="password" class="form-control" placeholder="Password">
+        <h2 class="form-signin-heading"><fmt:message key="page.login.label.signin"/> </h2>
+        <input type="text" class="form-control" placeholder=<fmt:message key="general.label.login" /> autofocus>
+        <input type="password" class="form-control" placeholder=<fmt:message key="general.label.password"/> >
         <label class="checkbox">
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> <fmt:message key="page.login.checkbox.remember"/>
         </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><fmt:message key="page.login.submit"/></button>
     </form>
 
 </div>
 
 </body>
 </html>
+</fmt:bundle>
