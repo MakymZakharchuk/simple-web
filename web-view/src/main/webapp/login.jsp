@@ -29,10 +29,10 @@
 
 <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">
         <h2 class="form-signin-heading"><fmt:message key="page.login.label.signin"/> </h2>
-        <input type="text" class="form-control" placeholder=<fmt:message key="general.label.login" /> autofocus>
-        <input type="password" class="form-control" placeholder=<fmt:message key="general.label.password"/> >
+        <input type="text" class="form-control" name='j_username' placeholder=<fmt:message key="general.label.login" /> autofocus>
+        <input type="password" class="form-control" name='j_password' placeholder=<fmt:message key="general.label.password"/> >
         <label class="checkbox">
             <input type="checkbox" value="remember-me"> <fmt:message key="page.login.checkbox.remember"/>
         </label>

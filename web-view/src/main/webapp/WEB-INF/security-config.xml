@@ -7,9 +7,13 @@
        http://www.springframework.org/schema/security
        http://www.springframework.org/schema/security/spring-security.xsd">
 
+    <s:http pattern="/css/**" security="none"/>
+    <s:http pattern="/assets/**" security="none"/>
+    <s:http pattern="/dist/**" security="none"/>
     <s:http>
+        <s:intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <s:intercept-url pattern="/**" access="ROLE_USER" />
-        <s:form-login />
+        <s:form-login login-page="/login.jsp"/>
         <s:logout />
     </s:http>
 
