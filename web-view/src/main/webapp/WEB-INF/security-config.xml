@@ -10,9 +10,11 @@
     <s:http pattern="/css/**" security="none"/>
     <s:http pattern="/assets/**" security="none"/>
     <s:http pattern="/dist/**" security="none"/>
+    <s:http pattern="/template/**" security="none"/>
+    <s:http pattern="/js/**" security="none"/>
     <s:http>
         <s:intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
-        <s:intercept-url pattern="/**" access="ROLE_USER" />
+        <s:intercept-url pattern="/pages/**" access="ROLE_USER" />
         <s:form-login login-page="/login.jsp" default-target-url="/home.jsp"/>
         <s:logout />
     </s:http>
