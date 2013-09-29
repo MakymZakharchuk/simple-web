@@ -7,19 +7,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Шахи онлайн</a>
+            <div class="navbar-brand" href="#">Шахи онлайн</div>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/home.jsp">Домашня</a></li>
-                <li><a href="/rating.jsp">Рейтинг гравців</a></li>
-                <li><a href="/about.jsp">Про сайт</a></li>
+                <li id="homeRef"><a href="/home.jsp">Домашня</a></li>
+                <li id="ratingRef"><a href="/rating.jsp">Рейтинг гравців</a></li>
+                <li id="aboutRef"><a href="/about.jsp">Про сайт</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/profile.jsp">Hello, User</a></li>
-                <li class="active"><a href="/configuration.jsp">Налаштування аккаунту</a></li>
-                <li><a href="/j_spring_security_logout">Вихід</a></li>
+                <li id="profileRef"><a href="/pages/profile.jsp">Hello, User</a></li>
+                <li id="configRef"><a href="/configuration.jsp">Налаштування аккаунту</a></li>
+                <li id="logoutRef"><a href="/j_spring_security_logout">Вихід</a></li>
             </ul>
         </div>
     </div>

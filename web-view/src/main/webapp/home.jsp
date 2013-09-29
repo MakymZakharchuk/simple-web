@@ -15,6 +15,10 @@
     <title><fmt:message key="page.home.title"/></title>
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <link href="css/navbar.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+
 </head>
 <body>
 <jsp:include page="template/nav-bar.jsp"/>
