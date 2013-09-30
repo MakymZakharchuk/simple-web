@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:s="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <s:http pattern="/ext/**" security="none"/>
+    <s:http>
+        <s:intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <s:intercept-url pattern="/pages/**" access="ROLE_USER" />
+        <s:form-login login-page="/login.jsp" default-target-url="/home.jsp"/>
+        <s:logout />
+    </s:http>
+
+    <s:authentication-manager>
+        <s:authentication-provider user-service-ref="userDetailsDao">
+        </s:authentication-provider>
+    </s:authentication-manager>
+
+    <bean id="userService" class="ua.bychkovskyy.security.impl.UserServiceImpl"/>
+
+    <bean id="userDetailsDao" class="org.springframework.security.provisioning.JdbcUserDetailsManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+</beans>
