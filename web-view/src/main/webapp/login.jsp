@@ -26,7 +26,7 @@
 </head>
 
 <body>
-
+<jsp:include page="ext/template/nav-bar.jsp"/>
 <div class="container">
 
     <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">
