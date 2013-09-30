@@ -5,6 +5,6 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="security-config.xml"/>
-    <import resource="classpath:persistence-config.xml"/>
+    <import resource="classpath:spring/persistence-config.xml"/>
 
 </beans>

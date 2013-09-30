@@ -10,7 +10,7 @@ import javax.persistence.FlushModeType;
 import javax.persistence.PersistenceContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:persistence-config.xml")
+@ContextConfiguration(locations = "classpath:spring/persistence-config.xml")
 public abstract class AbstractSpringTest {
 
     @PersistenceContext
