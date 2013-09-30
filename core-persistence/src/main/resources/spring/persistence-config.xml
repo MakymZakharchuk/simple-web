@@ -7,7 +7,7 @@
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/chessapp"/>
+        <property name="url" value="jdbc:ec2-23-21-211-172.compute-1.amazonaws.com"/>
         <property name="username" value="chessapp"/>
         <property name="password" value="chessapp"/>
     </bean>
