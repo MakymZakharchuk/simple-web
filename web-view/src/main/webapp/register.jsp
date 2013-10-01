@@ -30,24 +30,24 @@
 <jsp:include page="ext/template/nav-bar.jsp"/>
 <div class="container reg-form">
 
-    <form name='f' action='/register' method="POST">
+    <form name='f' action='/services/register' method="POST">
         <div class="label label-default reg-item">Введіть ім'я</div>
-        <input id="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
+        <input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
 
         <div class="label label-default reg-item">Введіть прізвище</div>
-        <input id="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
+        <input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
 
         <div class="label label-default reg-item">Введіть логін</div>
-        <input id="username" class="form-control reg-item" type="text" placeholder="Логін">
+        <input name="username" class="form-control reg-item" type="text" placeholder="Логін">
 
         <div class="label label-default reg-item">Введіть пароль</div>
-        <input id="password1" class="form-control reg-item" type="password" placeholder="Пароль">
+        <input name="password1" class="form-control reg-item" type="password" placeholder="Пароль">
 
         <div class="label label-default reg-item">Повторіть пароль</div>
-        <input id="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
+        <input name="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
 
         <div class="label label-default reg-item">Оберіть мову</div>
-        <select id="lang" class="form-control reg-item">
+        <select name="lang" class="form-control reg-item">
             <option value>Українська</option>
             <option value>English</option>
         </select>
