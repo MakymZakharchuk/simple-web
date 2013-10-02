@@ -24,10 +24,10 @@ var PasswordFields = function () {
 
         alert1.className = ValidationStatus.BAN;
         alert2.className = ValidationStatus.BAN;
-        if (pass1.length == '') {
+        if (pass1 == '') {
             alert1.className = ValidationStatus.UNDEFINED;
         }
-        if (pass2.length == '') {
+        if (pass2 == '') {
             alert2.className = ValidationStatus.UNDEFINED;
         }
         return false;
