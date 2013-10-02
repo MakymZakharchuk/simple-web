@@ -6,7 +6,7 @@ var ValidationStatus = {
 
 var PasswordFields = function () {
     var passwordField1 = document.getElementsByName('password1');
-    var passwordField2 = document.getElementsByName('password2')
+    var passwordField2 = document.getElementsByName('password2');
 
 
     this.isValidPassword = function () {
