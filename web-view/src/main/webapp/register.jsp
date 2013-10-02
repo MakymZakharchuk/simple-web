@@ -18,6 +18,8 @@
         <link href="ext/dist/css/bootstrap.css" rel="stylesheet">
         <link href="ext/css/signin.css" rel="stylesheet">
         <link href="ext/css/register.css" rel="stylesheet">
+        <script type="text/javascript" src="ext/assets/js/jquery.js"></script>
+        <script src="ext/js/register.js"></script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -33,32 +35,68 @@
         <form name='f' action='/services/register' method="POST">
             <table class="form-register">
                 <tr>
-                    <td><div class="label label-default reg-item">Введіть ім'я</div></td>
+                    <td>
+                        <div class="label label-default reg-item">Введіть ім'я:</div>
+                    </td>
                     <td><input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
                     <td></td>
                 </tr>
                 <tr>
-                    <td><div class="label label-default reg-item">Введіть прізвище</div>
+                    <td>
+                        <div class="label label-default reg-item">Введіть прізвище:</div>
                     <td><input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
                     <td></td>
                 </tr>
                 <tr>
-                    <td><div class="label label-default reg-item">Введіть логін</div>
-                    <td><input name="username" class="form-control reg-item" type="text" placeholder="Логін">
-                    <td></td>
+                    <td>
+                        <div class="label label-default reg-item">Введіть логін:</div>
+                    <td><input
+                            name="username"
+                            class="form-control reg-item"
+                            type="text"
+                            placeholder="Логін"
+                            oninput="fireChanged()"
+                            >
+                    <td><span id="uNameStatus"
+                              class="glyphicon glyphicon-asterisk">
+                              </span>
+                </td>
                 </tr>
                 <tr>
-                    <td><div class="label label-default reg-item">Введіть пароль</div>
-                    <td><input name="password1" class="form-control reg-item" type="password" placeholder="Пароль">
-                    <td></td>
+                    <td>
+                        <div class="label label-default reg-item">Введіть пароль:</div>
+                    <td><input
+                            name="password1"
+                            class="form-control reg-item"
+                            type="password"
+                            placeholder="Пароль"
+                            oninput="fireChanged()"
+                        >
+                    <td><span
+                            id="pass1Status"
+                            class="glyphicon glyphicon-asterisk">
+                        </span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div class="label label-default reg-item">Повторіть пароль</div>
-                    <td><input name="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
-                    <td></td>
+                    <td>
+                        <div class="label label-default reg-item">Повторіть пароль:</div>
+                    <td><input
+                            name="password2"
+                            class="form-control reg-item"
+                            type="password"
+                            placeholder="Пароль ще раз"
+                            oninput="fireChanged()"
+                        >
+                    <td><span
+                            id="pass2Status"
+                            class="glyphicon glyphicon-asterisk">
+                        </span>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div class="label label-default reg-item">Оберіть мову</div>
+                    <td>
+                        <div class="label label-default reg-item">Оберіть мову:</div>
                     <td><select name="lang" class="form-control reg-item">
                         <option value>Українська</option>
                         <option value>Engtrsh</option>
@@ -68,8 +106,20 @@
                 </tr>
                 </br>
                 <tr>
-                    <td><input class="btn btn btn-success reg-item" type="submit" value="Зареєструватись"/>
-                    <td><input class="btn btn btn-danger reg-item" type="reset" value="Відмінити"/>
+                    <td><input
+                            id="register"
+                            class="btn btn btn-success reg-item"
+                            type="submit"
+                            value="Зареєструватись"
+                            disabled="disabled"
+                            />
+                    </td>
+                    <td><input
+                            id="abort"
+                            class="btn btn btn-danger reg-item"
+                            type="reset"
+                            onclick="removeValidation();"
+                            value="Відмінити"/>
                     <td></td>
                 </tr>
             </table>
