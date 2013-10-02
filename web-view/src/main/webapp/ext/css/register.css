@@ -8,24 +8,9 @@
     display: inline;
 }
 
-
-.form-register li{
-    height: 50px;
-    list-style: none;
-}
-
 div.reg-item{
     font-size: 16px;
     background-color: inherit;
     color: #777777;
     line-height: 35px;
-}
-input.reg-item{
-    float: right;
-}
-select.reg-item{
-    float: right;
-}
-input.btn{
-    width: 150px;
 }

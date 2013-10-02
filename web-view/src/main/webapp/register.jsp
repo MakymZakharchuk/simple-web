@@ -31,39 +31,48 @@
     <div class="container reg-form">
 
         <form name='f' action='/services/register' method="POST">
-            <ul class="form-register">
-                <li>
-                    <div class="label label-default reg-item">Введіть ім'я</div>
-                    <input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
-                </li>
-                <li>
-                    <div class="label label-default reg-item">Введіть прізвище</div>
-                    <input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
-                </li>
-                <li>
-                    <div class="label label-default reg-item">Введіть логін</div>
-                    <input name="username" class="form-control reg-item" type="text" placeholder="Логін">
-                </li>
-                <li>
-                    <div class="label label-default reg-item">Введіть пароль</div>
-                    <input name="password1" class="form-control reg-item" type="password" placeholder="Пароль">
-                </li>
-                <li>
-                    <div class="label label-default reg-item">Повторіть пароль</div>
-                    <input name="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
-                </li>
-                <li>
-                    <div class="label label-default reg-item">Оберіть мову</div>
-                    <select name="lang" class="form-control reg-item">
+            <table class="form-register">
+                <tr>
+                    <td><div class="label label-default reg-item">Введіть ім'я</div></td>
+                    <td><input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="label label-default reg-item">Введіть прізвище</div>
+                    <td><input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="label label-default reg-item">Введіть логін</div>
+                    <td><input name="username" class="form-control reg-item" type="text" placeholder="Логін">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="label label-default reg-item">Введіть пароль</div>
+                    <td><input name="password1" class="form-control reg-item" type="password" placeholder="Пароль">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="label label-default reg-item">Повторіть пароль</div>
+                    <td><input name="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div class="label label-default reg-item">Оберіть мову</div>
+                    <td><select name="lang" class="form-control reg-item">
                         <option value>Українська</option>
-                        <option value>English</option>
+                        <option value>Engtrsh</option>
                     </select>
-                </li>
-                <li>
-                    <input class="btn btn btn-danger reg-item" type="reset" value="Відмінити"/>
-                    <input class="btn btn btn-success reg-item" type="submit" style="float: left" value="Зареєструватись"/>
-                </li>
-            </ul>
+                    </td>
+                    <td></td>
+                </tr>
+                </br>
+                <tr>
+                    <td><input class="btn btn btn-success reg-item" type="submit" value="Зареєструватись"/>
+                    <td><input class="btn btn btn-danger reg-item" type="reset" value="Відмінити"/>
+                    <td></td>
+                </tr>
+            </table>
 
         </form>
 
