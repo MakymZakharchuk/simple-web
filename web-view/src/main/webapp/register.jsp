@@ -5,58 +5,70 @@
 
 <fmt:setLocale value="${loginBean.language}"/>
 <fmt:bundle basename="label">
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="ext/assets/ico/favicon.png">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="shortcut icon" href="ext/assets/ico/favicon.png">
 
-    <title><fmt:message key="page.login.title"/> </title>
-    <link href="ext/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="ext/css/signin.css" rel="stylesheet">
-    <link href="ext/css/register.css" rel="stylesheet">
+        <title><fmt:message key="page.login.title"/></title>
+        <link href="ext/dist/css/bootstrap.css" rel="stylesheet">
+        <link href="ext/css/signin.css" rel="stylesheet">
+        <link href="ext/css/register.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="ext/assets/js/html5shiv.js"></script>
-    <script src="ext/assets/js/respond.min.js"></script>
-    <![endif]-->
-</head>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="ext/assets/js/html5shiv.js"></script>
+        <script src="ext/assets/js/respond.min.js"></script>
+        <![endif]-->
+    </head>
 
-<body>
-<jsp:include page="ext/template/nav-bar.jsp"/>
-<div class="container reg-form">
+    <body>
+    <jsp:include page="ext/template/nav-bar.jsp"/>
+    <div class="container reg-form">
 
-    <form name='f' action='/register' method="POST">
-        <div class="label label-default reg-item">Введіть ім'я</div>
-        <input id="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
+        <form name='f' action='/services/register' method="POST">
+            <ul class="form-register">
+                <li>
+                    <div class="label label-default reg-item">Введіть ім'я</div>
+                    <input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
+                </li>
+                <li>
+                    <div class="label label-default reg-item">Введіть прізвище</div>
+                    <input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
+                </li>
+                <li>
+                    <div class="label label-default reg-item">Введіть логін</div>
+                    <input name="username" class="form-control reg-item" type="text" placeholder="Логін">
+                </li>
+                <li>
+                    <div class="label label-default reg-item">Введіть пароль</div>
+                    <input name="password1" class="form-control reg-item" type="password" placeholder="Пароль">
+                </li>
+                <li>
+                    <div class="label label-default reg-item">Повторіть пароль</div>
+                    <input name="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
+                </li>
+                <li>
+                    <div class="label label-default reg-item">Оберіть мову</div>
+                    <select name="lang" class="form-control reg-item">
+                        <option value>Українська</option>
+                        <option value>English</option>
+                    </select>
+                </li>
+                <li>
+                    <input class="btn btn btn-danger reg-item" type="reset" value="Відмінити"/>
+                    <input class="btn btn btn-success reg-item" type="submit" style="float: left" value="Зареєструватись"/>
+                </li>
+            </ul>
 
-        <div class="label label-default reg-item">Введіть прізвище</div>
-        <input id="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
+        </form>
 
-        <div class="label label-default reg-item">Введіть логін</div>
-        <input id="username" class="form-control reg-item" type="text" placeholder="Логін">
+    </div>
 
-        <div class="label label-default reg-item">Введіть пароль</div>
-        <input id="password1" class="form-control reg-item" type="password" placeholder="Пароль">
-
-        <div class="label label-default reg-item">Повторіть пароль</div>
-        <label for="password2">Повторіть пароль</label><input id="password2" class="form-control reg-item" type="password" placeholder="Пароль ще раз">
-
-        <div class="label label-default reg-item">Оберіть мову</div>
-        <select id="lang" class="form-control reg-item">
-            <option value>Українська</option>
-            <option value>English</option>
-        </select>
-        <input class="btn btn btn-success reg-item" type="submit" value="Зареєструватись"/>
-        <input class="btn btn btn-danger reg-item" style="float: right;" type="reset" value="Відмінити"/>
-    </form>
-
-</div>
-
-</body>
-</html>
+    </body>
+    </html>
 </fmt:bundle>
