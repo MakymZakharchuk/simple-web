@@ -11,7 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <import resource="security-config.xml"/>
-    <import resource="classpath:spring/persistence-config.xml"/>
+    <import resource="classpath:spring/datasource-config.xml"/>
 
     <context:component-scan base-package="ua.bychkovskyy"/>
     <context:annotation-config/>
