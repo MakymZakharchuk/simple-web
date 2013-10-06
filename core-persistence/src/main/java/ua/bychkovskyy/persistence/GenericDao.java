@@ -6,7 +6,7 @@ public interface GenericDao<T> {
 
     void delete(T entity);
 
-    T save(T entity);
+    void save(T entity);
 
-    void update(T entity);
+    T update(T entity);
 }
