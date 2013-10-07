@@ -12,6 +12,7 @@
 
     <import resource="security-config.xml"/>
     <import resource="classpath:spring/datasource-config.xml"/>
+    <import resource="beans-web.xml"/>
 
     <context:component-scan base-package="ua.bychkovskyy"/>
     <context:annotation-config/>

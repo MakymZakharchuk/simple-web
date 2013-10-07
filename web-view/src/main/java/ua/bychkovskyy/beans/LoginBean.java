@@ -5,16 +5,17 @@ import ua.bychkovskyy.model.Player;
 import ua.bychkovskyy.security.UserHolder;
 
 public class LoginBean {
+    private UserHolder userHolder = UserHolder.getInstance();
 
     public String getLanguage() {
-        return UserHolder.getUser() != null
-                ? UserHolder.getUser().getLanguage()
+        return userHolder.getUser() != null
+                ? userHolder.getUser().getLanguage()
                 : Language.DEFAULT.getValue();
     }
 
     public String getDisplayUserName() {
         String displayName;
-        Player user = UserHolder.getUser();
+        Player user = userHolder.getUser();
         if (user.getFistName() != null && user.getLastName() != null) {
             displayName = user.getFistName() + " " + user.getLastName();
         } else {
@@ -25,6 +26,6 @@ public class LoginBean {
     }
 
     public boolean isAuthorized() {
-        return UserHolder.getUser() != null;
+        return userHolder.getUser() != null;
     }
 }
