@@ -26,6 +26,6 @@ public class LoginBean {
     }
 
     public boolean isAuthorized() {
-        return !userHolder.getUser().equals("anonymousUser");
+        return userHolder.getUser() != null;
     }
 }
