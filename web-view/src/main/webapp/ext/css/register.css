@@ -1,18 +1,16 @@
 .reg-form {
-    max-width: 400px;
+    max-width: 450px;
+    color: #ababab;
 }
 
 .reg-item{
-    margin: 7px 0 7px 0;
+    width: 200px;
+    display: inline;
 }
 
 div.reg-item{
     font-size: 16px;
-    width: 100%;
     background-color: inherit;
-    display: block;
     color: #777777;
-}
-input.btn{
-    width: 150px;
+    line-height: 35px;
 }

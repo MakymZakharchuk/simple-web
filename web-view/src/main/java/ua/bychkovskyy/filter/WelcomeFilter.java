@@ -12,7 +12,7 @@ public class WelcomeFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        ((HttpServletResponse) servletResponse).sendRedirect("/home.jsp");
+        ((HttpServletResponse) servletResponse).sendRedirect("/app/home");
     }
 
     @Override

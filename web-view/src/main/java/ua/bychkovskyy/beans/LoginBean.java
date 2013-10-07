@@ -1,16 +1,29 @@
 package ua.bychkovskyy.beans;
 
-import ua.bychkovskyy.model.Configuration;
 import ua.bychkovskyy.model.Language;
+import ua.bychkovskyy.model.Player;
+import ua.bychkovskyy.security.UserHolder;
 
 public class LoginBean {
-    private Configuration configuration = new Configuration();
+    private UserHolder userHolder = UserHolder.getInstance();
 
-    public LoginBean() {
-        this.configuration.setLanguage(Language.UK);
+    public String getLanguage() {
+        return Language.UK.getValue();
     }
 
-    public String getLanguage(){
-        return configuration.getLanguage().getValue();
+    public String getDisplayUserName() {
+        String displayName = null ;
+//        Player user = userHolder.getUser();
+//        if (user.getFistName() != null && user.getLastName() != null) {
+//            displayName = user.getFistName() + " " + user.getLastName();
+//        } else {
+//            displayName = user.getUserName();
+//        }
+
+        return displayName;
+    }
+
+    public boolean isAuthorized() {
+        return !userHolder.getUser().equals("anonymousUser");
     }
 }
