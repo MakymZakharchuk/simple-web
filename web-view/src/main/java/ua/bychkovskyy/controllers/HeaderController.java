@@ -29,7 +29,7 @@ public class HeaderController {
         }else {
             modelMap.put("url1", "/");
             modelMap.put("url2", "/app/register");
-            modelMap.put("url3", "/login.jsp");
+            modelMap.put("url3", "/app/login");
             modelMap.put("label1", "Домашня");
             modelMap.put("label2", "Реєстрація");
             modelMap.put("label3", "Вхід");

@@ -1,18 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:useBean id="loginBean" class="ua.bychkovskyy.beans.LoginBean" scope="application"/>
 
-<fmt:setLocale value="${loginBean.language}"/>
+<fmt:setLocale value="${language}"/>
 <fmt:bundle basename="label">
     <!DOCTYPE html>
     <html>
     <head>
-        <jsp:include page="WEB-INF/jsp/template/head-template.jsp"/>
+        <jsp:include page="template/head-template.jsp"/>
         <link href="/ext/css/signin.css" rel="stylesheet">
     </head>
     <body>
-    <jsp:include page="WEB-INF/jsp/template/nav-bar.jsp"/>
+    <jsp:include page="template/nav-bar.jsp"/>
     <div class="container">
 
         <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">

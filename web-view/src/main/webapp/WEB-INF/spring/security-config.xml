@@ -9,9 +9,9 @@
 
     <s:http pattern="/ext/**" security="none"/>
     <s:http>
-        <s:intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+        <s:intercept-url pattern="/app/login" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
         <s:intercept-url pattern="/pages/**" access="ROLE_USER" />
-        <s:form-login login-page="/login.jsp" default-target-url="/"/>
+        <s:form-login login-page="/app/login" default-target-url="/"/>
         <s:logout />
     </s:http>
 
