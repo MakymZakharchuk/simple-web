@@ -4,9 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="userHolder" class="ua.bychkovskyy.security.UserHolder" init-method="getInstance">
-        <property name="playerService" ref="playerServiceImpl"/>
-    </bean>
+    <bean id="userHolder" class="ua.bychkovskyy.security.UserHolder"/>
 
     <bean id="loginBean" class="ua.bychkovskyy.beans.LoginBean"/>
 
