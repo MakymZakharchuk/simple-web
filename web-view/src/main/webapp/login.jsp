@@ -8,11 +8,11 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <jsp:include page="ext/jsp/template/head-template.jsp"/>
+        <jsp:include page="WEB-INF/jsp/template/head-template.jsp"/>
         <link href="/ext/css/signin.css" rel="stylesheet">
     </head>
     <body>
-    <jsp:include page="ext/jsp/template/nav-bar.jsp"/>
+    <jsp:include page="WEB-INF/jsp/template/nav-bar.jsp"/>
     <div class="container">
 
         <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">
