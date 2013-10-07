@@ -36,4 +36,10 @@ public class PlayerServiceImpl implements PlayerService{
     public List<Player> getAllPlayers() {
         return playerDao.findAll();
     }
+
+    @Override
+    @Transactional
+    public void saveNewPlayer(Player player) {
+        playerDao.save(player);
+    }
 }

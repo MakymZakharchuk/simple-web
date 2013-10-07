@@ -13,4 +13,6 @@ public interface PlayerService {
     Player getPlayer(String userName);
 
     List<Player> getAllPlayers();
+
+    void saveNewPlayer(Player player);
 }

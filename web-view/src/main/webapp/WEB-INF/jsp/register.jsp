@@ -17,7 +17,7 @@
     <jsp:include page="template/nav-bar.jsp"/>
     <div class="container reg-form">
 
-        <form name='f' action='/services/register' method="POST">
+        <form name='f' action='actionRegister' method="POST">
             <table class="form-register">
                 <tr>
                     <td>

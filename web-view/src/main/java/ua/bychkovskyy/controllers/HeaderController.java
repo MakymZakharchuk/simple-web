@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import ua.bychkovskyy.beans.LoginBean;
+import ua.bychkovskyy.security.UserHolder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,10 +24,10 @@ public class HeaderController {
             modelMap.put("url1", "/pages/profile.jsp");
             modelMap.put("url2", "/configuration.jsp");
             modelMap.put("url3", "/j_spring_security_logout");
-            modelMap.put("label1", "Hello user name");
+            modelMap.put("label1", loginBean.getDisplayUserName());
             modelMap.put("label2", "Налаштування аккаунту");
             modelMap.put("label3", "Вихід");
-        }else {
+        } else {
             modelMap.put("url1", "/");
             modelMap.put("url2", "/app/register");
             modelMap.put("url3", "/app/login");

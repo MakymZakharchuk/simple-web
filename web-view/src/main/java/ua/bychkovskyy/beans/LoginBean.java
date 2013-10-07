@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ua.bychkovskyy.model.Language;
 import ua.bychkovskyy.model.Player;
 import ua.bychkovskyy.security.UserHolder;
+import ua.bychkovskyy.utils.StringUtils;
+
+import static ua.bychkovskyy.utils.StringUtils.*;
 
 public class LoginBean {
     @Autowired
@@ -16,7 +19,7 @@ public class LoginBean {
     public String getDisplayUserName() {
         String displayName = null ;
         Player user = userHolder.getUser();
-        if (user.getFistName() != null && user.getLastName() != null) {
+        if (isNotEmptyString(user.getFistName()) && isNotEmptyString(user.getLastName())) {
             displayName = user.getFistName() + " " + user.getLastName();
         } else {
             displayName = user.getUserName();
