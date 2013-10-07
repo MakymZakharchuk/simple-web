@@ -46,7 +46,7 @@
 
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/services/*</url-pattern>
+        <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

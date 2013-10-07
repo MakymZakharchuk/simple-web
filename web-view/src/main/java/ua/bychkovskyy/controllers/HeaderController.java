@@ -15,7 +15,7 @@ public class HeaderController {
     @Autowired
     private LoginBean loginBean;
 
-    @RequestMapping(value = "/ext/jsp/welcome-bar.jsp")
+    @RequestMapping(value = "jsp/welcome-bar.jsp")
     public ModelAndView getHeader() {
 
         Map<String, Object> modelMap = new HashMap<String, Object>();
@@ -28,13 +28,13 @@ public class HeaderController {
             modelMap.put("label3", "Вихід");
         }else {
             modelMap.put("url1", "/");
-            modelMap.put("url2", "/register.jsp");
+            modelMap.put("url2", "/app/register");
             modelMap.put("url3", "/login.jsp");
             modelMap.put("label1", "Домашня");
             modelMap.put("label2", "Реєстрація");
             modelMap.put("label3", "Вхід");
         }
-        ModelAndView result = new ModelAndView("welcome-bar", modelMap);
+        ModelAndView result = new ModelAndView("template/welcome-bar", modelMap);
         return result;
     }
 }

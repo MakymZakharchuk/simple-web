@@ -5,42 +5,31 @@
 
 <fmt:setLocale value="${loginBean.language}"/>
 <fmt:bundle basename="label">
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="ext/assets/ico/favicon.png">
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <jsp:include page="ext/jsp/template/head-template.jsp"/>
+        <link href="/ext/css/signin.css" rel="stylesheet">
+    </head>
+    <body>
+    <jsp:include page="ext/jsp/template/nav-bar.jsp"/>
+    <div class="container">
 
-    <title><fmt:message key="page.login.title"/> </title>
-    <link href="ext/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="ext/css/signin.css" rel="stylesheet">
+        <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">
+            <h2 class="form-signin-heading"><fmt:message key="page.login.label.signin"/></h2>
+            <input type="text" class="form-control" name='j_username' placeholder=
+                <fmt:message key="general.label.login"/> autofocus>
+            <input type="password" class="form-control" name='j_password' placeholder=
+                <fmt:message key="general.label.password"/>>
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> <fmt:message key="page.login.checkbox.remember"/>
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"><fmt:message
+                    key="page.login.submit"/></button>
+        </form>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="ext/assets/js/html5shiv.js"></script>
-    <script src="ext/assets/js/respond.min.js"></script>
-    <![endif]-->
-</head>
+    </div>
 
-<body>
-<jsp:include page="ext/template/nav-bar.jsp"/>
-<div class="container">
-
-    <form class="form-signin" name='f' action='/j_spring_security_check' method="POST">
-        <h2 class="form-signin-heading"><fmt:message key="page.login.label.signin"/> </h2>
-        <input type="text" class="form-control" name='j_username' placeholder=<fmt:message key="general.label.login" /> autofocus>
-        <input type="password" class="form-control" name='j_password' placeholder=<fmt:message key="general.label.password"/> >
-        <label class="checkbox">
-            <input type="checkbox" value="remember-me"> <fmt:message key="page.login.checkbox.remember"/>
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit"><fmt:message key="page.login.submit"/></button>
-    </form>
-
-</div>
-
-</body>
-</html>
+    </body>
+    </html>
 </fmt:bundle>
