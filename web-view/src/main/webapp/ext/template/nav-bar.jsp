@@ -16,11 +16,7 @@
                 <li id="aboutRef"><a href="/about.jsp">Про сайт</a></li>
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li id="profileRef"><a href="/pages/profile.jsp">Hello, User</a></li>
-                <li id="configRef"><a href="/configuration.jsp">Налаштування аккаунту</a></li>
-                <li id="logoutRef"><a href="/j_spring_security_logout">Вихід</a></li>
-            </ul>
+            <jsp:include page="/services/ext/jsp/welcome-bar.jsp"/>
         </div>
     </div>
 </div>

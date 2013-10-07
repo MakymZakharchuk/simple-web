@@ -2,7 +2,6 @@ package ua.bychkovskyy.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import ua.bychkovskyy.model.Player;
 import ua.bychkovskyy.service.PlayerService;
 
 public class UserHolder {
@@ -24,7 +23,7 @@ public class UserHolder {
         return instance;
     }
 
-    public Player getUser() {
+    public static String getUser() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
@@ -32,7 +31,7 @@ public class UserHolder {
         } else {
             username = principal.toString();
         }
-        return playerService.getPlayer(username);
+        return username;
     }
 
     public void setPlayerService(PlayerService playerService) {

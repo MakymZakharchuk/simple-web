@@ -8,4 +8,6 @@
         <property name="playerService" ref="playerServiceImpl"/>
     </bean>
 
+    <bean id="loginBean" class="ua.bychkovskyy.beans.LoginBean"/>
+
 </beans>
