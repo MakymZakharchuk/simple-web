@@ -3,7 +3,8 @@ package ua.bychkovskyy.model;
 
 public enum Language {
     UK("uk"),
-    EN("en");
+    EN("en"),
+    DEFAULT("en");
     private String value;
 
     Language(String value) {
