@@ -24,13 +24,13 @@
                         <div class="label label-default reg-item">Введіть ім'я:</div>
                     </td>
                     <td><input name="firstname" class="form-control reg-item" type="text" placeholder="Ім'я">
-                    <td></td>
+                    <td>${empty validationMessageFirstName ? "" : validationMessageFirstName}</td>
                 </tr>
                 <tr>
                     <td>
                         <div class="label label-default reg-item">Введіть прізвище:</div>
                     <td><input name="lastname" class="form-control reg-item" type="text" placeholder="Прізвище">
-                    <td></td>
+                    <td>${empty validationMessageLastName ? "" : validationMessageLastName}</td>
                 </tr>
                 <tr>
                     <td>
@@ -46,6 +46,7 @@
                               class="glyphicon glyphicon-asterisk">
                               </span>
                 </td>
+                    <td>${empty validationMessageUserName ? "" :validationMessageUserName}</td>
                 </tr>
                 <tr>
                     <td>

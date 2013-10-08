@@ -11,6 +11,8 @@ import ua.bychkovskyy.model.Player;
 import ua.bychkovskyy.service.PlayerService;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Controller
@@ -32,6 +34,12 @@ public class RegisterController {
             @RequestParam("password1")String password1,
             @RequestParam("password2")String password2,
             @RequestParam("lang")String lang){
+        if (userService.userExists(username)){
+            Map<String, Object> modelMap = new HashMap<String, Object>();
+            modelMap.put("validationMessageUserName", "Already in use");
+            return new ModelAndView("register",modelMap);
+        }
+
         User user = new User(username,password1, Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
 
         Player player = new Player();
@@ -42,5 +50,10 @@ public class RegisterController {
         userService.createUser(user);
         playerService.saveNewPlayer(player);
         return new ModelAndView("home");
+    }
+
+    @RequestMapping(value = "/actionRegister", method = RequestMethod.GET)
+    private ModelAndView redirectToPage(){
+        return new ModelAndView("register");
     }
 }
