@@ -12,6 +12,11 @@
     </head>
     <body>
     <jsp:include page="template/nav-bar.jsp"/>
+    <div style="text-align: center">
+        made by Vyacheslav Bychkovskyy
+        </br>
+        2013
+    </div>
     </body>
     </html>
 </fmt:bundle>
