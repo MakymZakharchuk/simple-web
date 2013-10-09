@@ -13,7 +13,7 @@ public class Player {
     private String userName;
 
     @Column(name = "FIRST_NAME")
-    private String fistName;
+    private String firstName;
 
     @Column(name = "LAST_NAME")
     private String lastName;
@@ -21,12 +21,12 @@ public class Player {
     @Column(name = "LANG")
     private String language;
 
-    public String getFistName() {
-        return fistName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFistName(String fistName) {
-        this.fistName = fistName;
+    public void setFirstName(String fistName) {
+        this.firstName = fistName;
     }
 
     public String getLastName() {

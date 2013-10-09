@@ -44,7 +44,7 @@ public class RegisterController {
 
         Player player = new Player();
         player.setUserName(username);
-        player.setFistName(fisrtname);
+        player.setFirstName(fisrtname);
         player.setLastName(lastname);
 
         userService.createUser(user);
