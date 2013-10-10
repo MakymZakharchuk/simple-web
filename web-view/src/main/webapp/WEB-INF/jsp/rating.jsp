@@ -15,7 +15,7 @@
     <body>
     <jsp:include page="template/nav-bar.jsp"/>
     <div class="container reg-form">
-        <table>
+        <table class="table table-hover">
             <tr>
                 <td>Імя</td>
                 <td>Прізвище</td>
