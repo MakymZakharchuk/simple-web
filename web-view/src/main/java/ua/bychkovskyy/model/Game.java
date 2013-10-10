@@ -1,8 +1,8 @@
 package ua.bychkovskyy.model;
 
+import ua.bychkovskyy.factory.FiguresFactory;
 import ua.bychkovskyy.model.chessboard.Figure;
 
-import javax.servlet.AsyncContext;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,6 +16,7 @@ public class Game {
     public Game(Player whitePlayer, Player blackPlayer) {
         this.whitePlayer = whitePlayer;
         this.blackPlayer = blackPlayer;
+        this.figures = FiguresFactory.getFigures();
     }
 
     public Player getWhitePlayer() {
@@ -36,5 +37,13 @@ public class Game {
 
     public void addGameObserver(GameObserver observer){
         watchers.add(observer);
+    }
+
+    public List<Figure> getFigures() {
+        return figures;
+    }
+
+    public void setFigures(List<Figure> figures) {
+        this.figures = figures;
     }
 }
