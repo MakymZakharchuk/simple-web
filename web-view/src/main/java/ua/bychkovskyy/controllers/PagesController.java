@@ -1,20 +1,14 @@
 package ua.bychkovskyy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ua.bychkovskyy.model.AnonymousGameObserver;
-import ua.bychkovskyy.model.Game;
 import ua.bychkovskyy.model.Language;
 import ua.bychkovskyy.model.Player;
 import ua.bychkovskyy.service.GameService;
 import ua.bychkovskyy.service.PlayerService;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -62,11 +56,5 @@ public class PagesController {
     @RequestMapping(value = "/register")
     public ModelAndView register(){
         return new ModelAndView("register");
-    }
-
-    @RequestMapping(value = "/watch")
-    public ModelAndView watch(@RequestParam("id") int id, HttpServletRequest request) {
-        //todo make async context
-        return new ModelAndView("watch");
     }
 }
