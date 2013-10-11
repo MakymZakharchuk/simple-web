@@ -35,7 +35,7 @@ public class Game {
         this.id = id;
     }
 
-    public void addGameObserver(GameObserver observer){
+    public void addGameObserver(GameObserver observer) {
         watchers.add(observer);
     }
 

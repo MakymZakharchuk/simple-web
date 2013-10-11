@@ -10,6 +10,7 @@ import java.util.List;
 
 @Service
 public class GameServiceImpl implements GameService {
+    private Game game;
 
     @Override
     public List<Game> getActiveGames() {
@@ -19,10 +20,10 @@ public class GameServiceImpl implements GameService {
         Player p2 = new Player();
         p2.setUserName("player2");
 
-        Game game = new Game(p1,p2);
+        Game game = new Game(p1, p2);
         game.setId(1);
 
-        Game game2 = new Game(p1,p2);
+        Game game2 = new Game(p1, p2);
         game2.setId(2);
         return Arrays.asList(game, game2);
     }
@@ -36,7 +37,9 @@ public class GameServiceImpl implements GameService {
         Player p2 = new Player();
         p2.setUserName("player2");
 
-        Game game = new Game(p1,p2);
+        if (game == null) {
+            game = new Game(p1, p2);
+        }
         game.setId(id);
         return game;
     }

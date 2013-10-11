@@ -13,6 +13,7 @@ public class FiguresFactory {
     public static List<Figure> getFigures() {
         figures = new ArrayList<Figure>(32);
         initFigures();
+        FigureMixerStub.mixFigures(figures);
         return figures;
     }
 

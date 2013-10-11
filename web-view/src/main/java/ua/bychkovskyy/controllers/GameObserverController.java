@@ -10,8 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.bychkovskyy.model.Game;
 import ua.bychkovskyy.service.GameService;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
 public class GameObserverController {
     @Autowired
@@ -23,7 +21,7 @@ public class GameObserverController {
     }
 
     @RequestMapping(value = "/watch")
-    public ModelAndView watch(@RequestParam("id") int id, HttpServletRequest request) {
+    public ModelAndView watch() {
         //todo make async context
         return new ModelAndView("watch");
     }
