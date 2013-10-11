@@ -1,5 +1,7 @@
 package ua.bychkovskyy.controllers;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +17,8 @@ import java.util.Map;
 
 @Controller
 public class PagesController {
+
+    private final Log LOG = LogFactory.getLog(PagesController.class);
 
     @Autowired
     private PlayerService playerService;

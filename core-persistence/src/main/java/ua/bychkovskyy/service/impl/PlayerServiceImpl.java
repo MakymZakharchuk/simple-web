@@ -1,5 +1,7 @@
 package ua.bychkovskyy.service.impl;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +13,8 @@ import java.util.List;
 
 @Service
 public class PlayerServiceImpl implements PlayerService{
+
+    private final Log LOG = LogFactory.getLog(PlayerServiceImpl.class);
 
     @Autowired
     private PlayerDao playerDao;
