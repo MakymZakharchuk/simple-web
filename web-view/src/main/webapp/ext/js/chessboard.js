@@ -6,6 +6,10 @@ $(document).ready(
     })
 );
 
+$(function () {
+    $(".draggable").draggable();
+});
+
 var Position = function (x, y) {
     this.x = x;
     this.y = y;
@@ -21,7 +25,7 @@ function initFigures(figures) {
 function paintFigure(figure) {
     var image = getImage(figure);
     var pos = new Position(figure.position.x, figure.position.y);
-    getCellByPosition(pos)[0].innerHTML = '<img src="' + image + '">';
+    getCellByPosition(pos)[0].innerHTML = '<img class="draggable" src="' + image + '">';
 
 }
 
@@ -77,36 +81,4 @@ function getGame(id) {
     xmlHttp.send(null);
     var resp = xmlHttp.responseText;
     return JSON.parse(resp);
-}
-
-var messagesWaiting = false;
-function getMessages() {
-    if (!messagesWaiting) {
-        messagesWaiting = true;
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                messagesWaiting = false;
-                var resp = xmlhttp.responseText;
-                var game = JSON.parse(resp);
-                clearChessBoard();
-                initFigures(game.figures);
-            }
-        };
-        xmlhttp.open('GET', 'watch/get?id=1', true);
-        xmlhttp.send();
-
-    }
-}
-setInterval(getMessages, 100);
-
-function clearChessBoard() {
-    var chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-    var c = 0;
-    for (var i = 1; i < 9; i++) {
-        for (var j = 0; j <= 8; j++) {
-            var line = $('.' + i + ' .' + chars[j]);
-            $(line).text('');
-        }
-    }
 }
