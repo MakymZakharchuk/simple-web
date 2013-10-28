@@ -10,7 +10,7 @@
         for (int i = 8; i > 0; i--) {
             out.write("<tr class=\"" + i + "\"><td>" + i + "</td>\n");
             for (char c = 'a'; c <= 'h'; c++) {
-                out.write("\t<td class=" + c + " cell\"></td>\n");
+                out.write("\t<td class=\"" + c + " cell\"></td>\n");
             }
             out.write("</tr>\n");
         }
