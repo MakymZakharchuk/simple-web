@@ -8,11 +8,11 @@
     </tr>
     <%
         for (int i = 8; i > 0; i--) {
-            out.write("<tr class=\"" + i + "\"><td>" + i + "</td>");
+            out.write("<tr class=\"" + i + "\"><td>" + i + "</td>\n");
             for (char c = 'a'; c <= 'h'; c++) {
-                out.write("<td class=" + c + " cell\"></td>");
+                out.write("\t<td class=" + c + " cell\"></td>\n");
             }
-            out.write("</tr>");
+            out.write("</tr>\n");
         }
     %>
     <tr>
@@ -23,9 +23,9 @@
 </table>
 <%!
     private void printCoordinates(Writer out) throws IOException {
-        out.write("<td></td>");
+        out.write("<td></td>\n");
         for (char c = 'a'; c <= 'h'; c++) {
-            out.write("<td>" + c + "</td>");
+            out.write("<td>" + c + "</td>\n");
         }
     }
 %>
