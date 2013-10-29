@@ -1,18 +1,12 @@
 $(document).ready(
     (function () {
-        initChessBoard();
         var game = getGame(2);
-        initFigures(game.figures);
+        initFigures(game['figures']);
     })
 );
 
-$(function () {
-    $(".draggable").draggable({ snap: ".cell", snapMode: "inner"});
-});
-
 var Position = function (x, y) {
-    this.x = x;
-    this.y = y;
+    this.pos = y + x;
 };
 
 function initFigures(figures) {
@@ -23,56 +17,42 @@ function initFigures(figures) {
 }
 
 function paintFigure(figure) {
-    var image = getImage(figure);
-    var pos = new Position(figure.position.x, figure.position.y);
-    getCellByPosition(pos)[0].innerHTML = '<div class="draggable"><img class="figure" src="' + image + '"></div>';
-
+    var image = getFigureImage(figure);
+    var location = new Position(figure.position.x, figure.position.y);
+    var cell = $('#' + location.pos);
+    cell.html('<a href="#" class="figure">' + image + '</a>');
 }
 
-function initChessBoard() {
-    var chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
-    var c = 0;
-    for (var i = 1; i < 9; i++) {
-        for (var j = 0; j <= 8; j++) {
-            var line = $('.' + i + ' .' + chars[j]);
-            if (c % 2 == 0) {
-                $(line).addClass('dark');
-            } else {
-                $(line).addClass('white');
-            }
-            c++;
-        }
-    }
-}
+var whiteFigureMap = {
+    KING: '&#9813;',
+    QUEEN: '&#9812;',
+    ROOK: '&#9814;',
+    BISHOP: '&#9815;',
+    KNIGHT: '&#9816;',
+    PAWN: '&#9817;'
+};
 
-function getCellByPosition(pos) {
-    return $('.' + pos.x + ' .' + pos.y);
-}
+var blackFigureMap = {
+    KING: '&#9819;',
+    QUEEN: '&#9818;',
+    ROOK: '&#9820;',
+    BISHOP: '&#9821;',
+    KNIGHT: '&#9822;',
+    PAWN: '&#9823;'
+};
 
-function getImage(figure) {
-    var path = '/ext/icons/';
+
+function getFigureImage(figure) {
     if (figure.white) {
-        path = path + 'white/';
+        return whiteFigureMap[figure.type];
     } else {
-        path = path + 'black/';
-    }
-
-    switch (figure.type) {
-        case 'KING' :
-            return path + 'king.png';
-        case 'QUEEN' :
-            return path + 'queen.png';
-        case 'ROOK' :
-            return path + 'rook.png';
-        case 'BISHOP' :
-            return path + 'bishop.png';
-        case 'KNIGHT' :
-            return path + 'knight.png';
-        case 'PAWN' :
-            return path + 'pawn.png';
+        return blackFigureMap[figure.type];
     }
 }
 
+function selectFigure(cell) {
+    alert(cell.id);
+}
 
 function getGame(id) {
     var url = 'watch/get?id=' + id;
