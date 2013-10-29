@@ -50,8 +50,18 @@ function getFigureImage(figure) {
     }
 }
 
-function selectFigure(cell) {
-    alert(cell.id);
+function selectFigure(currentCell) {
+    if (currentCell.id == document.clickedId){
+        return;
+    }
+    if (document.clickedId) {
+        var previousCell = document.getElementById(document.clickedId);
+        currentCell.innerHTML = previousCell.innerHTML;
+        previousCell.innerHTML = '';
+        document.clickedId = null;
+    } else {
+        document.clickedId = currentCell.id;
+    }
 }
 
 function getGame(id) {
