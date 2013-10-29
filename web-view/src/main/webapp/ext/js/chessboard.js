@@ -7,7 +7,7 @@ $(document).ready(
 );
 
 $(function () {
-    $(".draggable").draggable();
+    $(".draggable").draggable({ snap: ".cell", snapMode: "inner"});
 });
 
 var Position = function (x, y) {
@@ -25,7 +25,7 @@ function initFigures(figures) {
 function paintFigure(figure) {
     var image = getImage(figure);
     var pos = new Position(figure.position.x, figure.position.y);
-    getCellByPosition(pos)[0].innerHTML = '<img class="draggable" src="' + image + '">';
+    getCellByPosition(pos)[0].innerHTML = '<div class="draggable"><img class="figure" src="' + image + '"></div>';
 
 }
 

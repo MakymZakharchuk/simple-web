@@ -1,4 +1,4 @@
-.chessboard tr td {
+.chessboard tr td, .draggable {
     height: 60px;
     width: 60px;
     text-align: center;
@@ -9,4 +9,8 @@
 }
 .dark{
     background: #CD8B46;
+}
+
+.figure {
+    padding-top: 6px;
 }
